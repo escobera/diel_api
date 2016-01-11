@@ -3,7 +3,7 @@ defmodule DielApi.Repo.Migrations.CreateAttendance do
 
   def change do
     create table(:attendances) do
-      add :status, :integer
+      add :status, :boolean
       add :student_id, references(:students)
 
       timestamps

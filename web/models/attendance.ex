@@ -2,7 +2,7 @@ defmodule DielApi.Attendance do
   use DielApi.Web, :model
 
   schema "attendances" do
-    field :status, :integer
+    field :status, :boolean
     belongs_to :student, DielApi.Student
 
     timestamps
