@@ -1,6 +1,8 @@
 defmodule DielApi.StudentView do
   use DielApi.Web, :view
 
+  attributes [:name, :registration]
+
   def render("index.json", %{students: students}) do
     %{data: render_many(students, DielApi.StudentView, "student.json")}
   end

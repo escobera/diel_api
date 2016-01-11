@@ -10,13 +10,16 @@ defmodule DielApi.Router do
   end
 
   pipeline :api do
-    plug :accepts, ["json"]
+    plug :accepts, ["json-api"]
+    plug JaSerializer.ContentTypeNegotiation
+    plug JaSerializer.Deserializer
   end
 
   scope "/", DielApi do
     pipe_through :api
 
     resources "/students", StudentController, except: [:new, :edit]
+    resources "/attendances", AttendanceController, except: [:new, :edit]
   end
 
 
