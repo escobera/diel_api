@@ -3,7 +3,7 @@ defmodule DielApi.Attendance do
 
   schema "attendances" do
     field :status, :integer
-    field :student_id, :integer
+    belongs_to :student, DielApi.Student
 
     timestamps
   end
